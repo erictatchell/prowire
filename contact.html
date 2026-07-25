@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Prowire Electric for residential and commercial electrical service in Vancouver, Squamish, Whistler, and surrounding areas.">
+  <title>Contact | Prowire Electric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=28">
+  <script src="app.js?v=4" defer></script>
+</head>
+<body>
+  <header class="site-header solid-header" data-header>
+    <a class="brand" href="index.html" aria-label="Prowire Electric home">
+      <img class="brand-logo" src="assets/logo.png" alt="" width="177" height="153">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Services</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <a class="header-call" href="tel:16048493192">604-849-3192</a>
+  </header>
+
+  <main>
+    <section class="page-hero contact-hero">
+      <div class="page-hero-copy reveal">
+        <p class="eyebrow">Contact Us</p>
+        <h1>Contact Prowire Electric for your next electrical project.</h1>
+        <p>Fill out the form or give the team a call to schedule a free consultation. Prowire serves Vancouver, Squamish, Whistler, and surrounding areas.</p>
+      </div>
+      <div class="contact-card reveal">
+        <span>Prowire Electric</span>
+        <a href="mailto:prowireelectric.ltd@gmail.com">prowireelectric.ltd@gmail.com</a>
+        <a href="tel:16048493192">(604) 849-3192</a>
+      </div>
+    </section>
+
+    <section class="section contact-page-grid">
+      <form class="contact-form reveal" data-contact-form>
+        <label>
+          <span>First Name</span>
+          <input type="text" name="firstName" autocomplete="given-name" required>
+        </label>
+        <label>
+          <span>Last Name</span>
+          <input type="text" name="lastName" autocomplete="family-name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label class="full-field">
+          <span>Address</span>
+          <input type="text" name="address" autocomplete="street-address">
+        </label>
+        <label class="full-field">
+          <span>Subject</span>
+          <input type="text" name="subject">
+        </label>
+        <label class="full-field">
+          <span>Message</span>
+          <textarea name="message" rows="6" placeholder="Type your message here..."></textarea>
+        </label>
+        <button class="button button-primary full-field" type="submit">Send message</button>
+        <p class="form-status full-field" data-form-status aria-live="polite"></p>
+      </form>
+
+      <div class="map-panel reveal">
+        <div class="map-heading">
+          <p class="eyebrow">Service Area</p>
+          <h2>Serving Squamish and the Sea to Sky corridor.</h2>
+          <p>Prowire also serves Vancouver, Whistler, and surrounding communities for residential and commercial electrical work.</p>
+        </div>
+        <iframe
+          title="Map showing Squamish, British Columbia"
+          src="https://www.google.com/maps?q=Squamish%2C%20BC&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <div class="angular-divider angular-divider-to-dark angular-divider-compact" aria-hidden="true">
+    <svg viewBox="0 0 1440 98" preserveAspectRatio="none" focusable="false">
+      <polyline class="angular-divider-glow" points="0,71 187,36 432,58 677,24 950,54 1210,28 1440,64"></polyline>
+      <polyline class="angular-divider-dash" points="0,71 187,36 432,58 677,24 950,54 1210,28 1440,64"></polyline>
+      <g class="angular-divider-nodes">
+        <rect x="182" y="31" width="10" height="10"></rect>
+        <rect x="427" y="53" width="10" height="10"></rect>
+        <rect x="672" y="19" width="10" height="10"></rect>
+        <rect x="945" y="49" width="10" height="10"></rect>
+        <rect x="1205" y="23" width="10" height="10"></rect>
+      </g>
+    </svg>
+  </div>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Prowire Electric</strong>
+      <p>Residential and commercial electrical services in Vancouver, Squamish, Whistler, and surrounding areas.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:prowireelectric.ltd@gmail.com">prowireelectric.ltd@gmail.com</a>
+      <a href="tel:16048493192">604-849-3192</a>
+      <a href="#">TikTok</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+    <small>&copy; 2026 Prowire Electric. All rights reserved.</small>
+  </footer>
+
+  <aside class="chat-widget" aria-label="Chat widget">
+    <button class="chat-button" type="button" aria-expanded="false" data-chat-toggle>
+      <span class="chat-dot"></span>
+      Let's Chat
+    </button>
+    <div class="chat-panel" data-chat-panel hidden>
+      <strong>Prowire Electric</strong>
+      <p>For active inquiries, call or email Prowire Electric.</p>
+      <input type="text" aria-label="Chat message" placeholder="Type your message...">
+    </div>
+  </aside>
+</body>
+</html>
