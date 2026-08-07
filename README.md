@@ -15,7 +15,8 @@ Lightweight static site for Prowire Electric. It uses plain HTML, CSS, and JavaS
 - `api/admin/*` - Vercel serverless admin auth endpoints
 - `vercel.json` - clean URL and admin route configuration
 - `assets/logo.png` - Prowire Electric logo used in the header
-- `assets/placeholder.jpg` - temporary image used across the site
+- `assets/placeholder.jpg` - current hero/admin background image
+- `assets/project-*.jpg` - client project photos used across supporting sections and service cards
 
 ## Editing Notes
 
@@ -31,7 +32,7 @@ The linen and almond tones are supporting page colors used to keep the site from
 
 Roboto is loaded through Google Fonts in each HTML file with `display=swap`; `styles.css` falls back to Helvetica and Arial if the font request is unavailable. The home hero title also loads a lighter Orbitron weight as a close web-font match for the angular logo style.
 
-Replace `assets/placeholder.jpg` with final project photography when available, or update individual image `src` values inside the HTML files.
+The home hero/admin background still comes from `assets/placeholder.jpg`. Supporting project and service photography uses the named `assets/project-*.jpg` files referenced in the HTML and `styles.css`.
 
 The contact forms are cosmetic right now. To connect them later, replace the `submit` handler in `app.js` with a backend endpoint, Formspree, Netlify Forms, or another form service.
 

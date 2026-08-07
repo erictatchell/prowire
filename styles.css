@@ -189,6 +189,17 @@ textarea {
   overflow: hidden;
 }
 
+@media (min-width: 921px) {
+  .home-hero {
+    min-height: clamp(600px, 64svh, 720px);
+    padding-top: calc(var(--header-height) + 24px);
+  }
+
+  .hero-stack + .split-section {
+    padding-top: clamp(54px, 5vw, 90px);
+  }
+}
+
 .hero-stack {
   position: relative;
   overflow: hidden;
@@ -639,11 +650,12 @@ h3 {
 
 .service-card {
   position: relative;
-  min-height: 250px;
+  min-height: 386px;
   padding: 26px;
   border: 1px solid rgba(255, 253, 248, 0.13);
   background: rgba(255, 253, 248, 0.045);
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+  overflow: hidden;
 }
 
 .service-card::before {
@@ -652,13 +664,29 @@ h3 {
   top: 0;
   right: 18px;
   left: 0;
+  z-index: 1;
   height: 2px;
   background: var(--accent);
 }
 
+.service-card-image,
+.service-detail-card-image {
+  display: block;
+  width: calc(100% + 52px);
+  max-width: none;
+  height: 160px;
+  margin: -26px -26px 22px;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.04);
+}
+
+.service-card-image {
+  opacity: 0.84;
+}
+
 .service-index {
   display: inline-flex;
-  margin-bottom: 46px;
+  margin-bottom: 18px;
   color: var(--accent);
   font-weight: 900;
 }
@@ -789,6 +817,10 @@ h3 {
   align-items: stretch;
 }
 
+.work-hero {
+  align-items: center;
+}
+
 .process-section {
   background: var(--white);
 }
@@ -897,7 +929,7 @@ h3 {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 332px;
+  min-height: 522px;
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 0;
@@ -905,6 +937,7 @@ h3 {
   background:
     linear-gradient(135deg, rgba(212, 77, 92, 0.08), transparent 48%),
     var(--white);
+  overflow: hidden;
 }
 
 .service-detail-card::before {
@@ -913,8 +946,13 @@ h3 {
   top: 0;
   right: 18px;
   left: 0;
+  z-index: 1;
   height: 3px;
   background: var(--accent);
+}
+
+.service-detail-card-image {
+  height: 174px;
 }
 
 .service-detail-card > span {
@@ -926,7 +964,7 @@ h3 {
 
 .service-detail-card h2 {
   max-width: 13ch;
-  margin-top: 34px;
+  margin-top: 16px;
   font-size: clamp(1.28rem, 2.1vw, 1.74rem);
   line-height: 1.06;
 }
@@ -1000,7 +1038,7 @@ h3 {
   color: var(--white);
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(7, 0, 13, 0.86)),
-    url("assets/placeholder.jpg?v=5") center / cover;
+    url("assets/project-service-equipment.jpg") center / cover;
   box-shadow: var(--shadow);
 }
 
@@ -1353,15 +1391,15 @@ h3 {
   }
 
   .hero {
-    min-height: 82svh;
-    padding: 100px 18px 18px;
+    min-height: clamp(560px, 72svh, 640px);
+    padding: 92px 18px 14px;
   }
 
   .home-hero .hero-content {
     display: grid;
     justify-items: center;
     justify-self: center;
-    width: min(390px, 100%);
+    width: min(370px, 100%);
     text-align: center;
   }
 
@@ -1373,12 +1411,16 @@ h3 {
     justify-items: center;
     margin-right: auto;
     margin-left: auto;
-    font-size: clamp(2.35rem, 13vw, 4rem);
+    width: 100%;
+    font-size: clamp(1.95rem, 9.4vw, 3rem);
     text-align: center;
   }
 
   .home-hero .eyebrow {
+    width: 100%;
+    max-width: 30ch;
     font-size: 0.82rem;
+    line-height: 1.25;
     text-align: center;
   }
 
@@ -1386,6 +1428,10 @@ h3 {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+  }
+
+  .home-hero .hero-actions {
+    margin-top: 28px;
   }
 
   h2 {
@@ -1464,6 +1510,13 @@ h3 {
   .service-detail-card {
     min-height: 0;
     padding: 22px;
+  }
+
+  .service-card-image,
+  .service-detail-card-image {
+    width: calc(100% + 44px);
+    height: 180px;
+    margin: -22px -22px 20px;
   }
 
   .service-detail-card h2 {
