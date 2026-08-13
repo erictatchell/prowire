@@ -1581,8 +1581,16 @@ h3 {
     padding: 92px 18px 14px;
   }
 
+  .home-hero {
+    min-height: auto;
+    grid-template-rows: max-content max-content;
+    align-content: start;
+    row-gap: 24px;
+  }
+
   .home-hero .hero-content {
     display: grid;
+    align-self: auto;
     justify-items: center;
     justify-self: center;
     width: min(370px, 100%);
@@ -1638,16 +1646,19 @@ h3 {
   }
 
   .hero-strip {
+    align-self: auto;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid rgba(255, 253, 248, 0.22);
   }
 
-  .hero-strip a {
+  .hero-strip a,
+  .hero-strip a + a {
     border-top: 0;
-    border-left: 1px solid rgba(255, 253, 248, 0.18);
+    border-left: 0;
   }
 
-  .hero-strip a:nth-child(odd) {
-    border-left: 0;
+  .hero-strip a:nth-child(even) {
+    border-left: 1px solid rgba(255, 253, 248, 0.18);
   }
 
   .hero-strip a:nth-child(n + 3) {
