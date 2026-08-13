@@ -3,13 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Electrical services from Prowire Electric, including residential, commercial, EV charging, solar, security, and automation work.">
-  <title>Services | Prowire Electric</title>
+  <meta name="description" content="Explore new-build, residential, commercial, EV charger, solar, CCTV, security, Lutron, and Control4 electrical services across Squamish and Sea to Sky.">
+  <title>Electrical Services &amp; Pricing | Prowire Electric</title>
+  <link rel="canonical" href="https://www.prowireelectric.ca/work">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prowire Electric">
+  <meta property="og:title" content="Electrical Services &amp; Pricing | Prowire Electric">
+  <meta property="og:description" content="New-build, residential, commercial, EV charger, solar, CCTV, security, and automation electrical services across Sea to Sky.">
+  <meta property="og:url" content="https://www.prowireelectric.ca/work">
+  <meta property="og:image" content="https://www.prowireelectric.ca/assets/project-solar-roof.jpg">
+  <meta property="og:image:alt" content="Solar electrical project in the Sea to Sky corridor">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=31">
-  <script src="app.js?v=4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=32">
+  <script src="app.js?v=5" defer></script>
 </head>
 <body>
   <header class="site-header solid-header" data-header>
@@ -24,6 +35,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="work.html" aria-current="page">Services</a>
+      <a href="work.html#pricing">Pricing</a>
       <a href="contact.html">Contact</a>
     </nav>
     <a class="header-call" href="tel:16048493192">604-849-3192</a>
@@ -33,11 +45,11 @@
     <section class="page-hero work-hero services-hero">
       <div class="page-hero-copy reveal">
         <p class="eyebrow">Electrical Services</p>
-        <h1>Electrical work for homes, businesses, and specialty systems.</h1>
-        <p>Prowire Electric provides residential and commercial service, EV charger installation, solar electrical support, security systems, and automation across Vancouver, Squamish, Whistler, and nearby communities.</p>
+        <h1>Electrical services for new builds, homes, and businesses.</h1>
+        <p>Prowire Electric provides complete new-build and renovation wiring, commercial installations, EV chargers, solar electrical support, security systems, and automation across Squamish, Whistler, Vancouver, and nearby communities.</p>
       </div>
       <figure class="page-hero-image reveal">
-        <img src="assets/project-solar-roof.jpg" alt="Solar panel electrical work on a Sea to Sky roof" width="900" height="680">
+        <img src="assets/project-solar-roof.jpg" srcset="assets/project-solar-roof-720.webp 720w, assets/project-solar-roof.jpg 1170w" sizes="(max-width: 920px) calc(100vw - 36px), 52vw" alt="Solar panel electrical work on a Sea to Sky roof" width="900" height="680" fetchpriority="high" decoding="async">
       </figure>
     </section>
 
@@ -45,36 +57,38 @@
       <div class="section-heading reveal">
         <p class="eyebrow">Service List</p>
         <h2>What Prowire can help with.</h2>
-        <p>Core electrical services are grouped below so visitors can quickly confirm whether the job fits before they call or request a consultation.</p>
+        <p>Core electrical services are grouped below so you can confirm whether the project fits, understand what is included, and request project-specific pricing.</p>
       </div>
 
       <div class="service-detail-grid">
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-commercial-panel.jpg" alt="Commercial electrical panel wiring" width="500" height="360">
+        <article class="service-detail-card reveal" id="commercial">
+          <img class="service-detail-card-image" src="assets/project-commercial-panel.jpg" srcset="assets/project-commercial-panel-720.webp 720w, assets/project-commercial-panel.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="Commercial electrical panel wiring" width="500" height="360" loading="lazy" decoding="async">
           <span>01</span>
           <h2>Commercial Electrical</h2>
-          <p>Electrical service for offices, shops, tenant improvements, commercial renovations, and business properties.</p>
+          <p>Electrical planning and installation for commercial new builds, offices, shops, tenant improvements, renovations, and business properties.</p>
           <ul class="service-points">
             <li>Lighting and power layouts</li>
+            <li>New-build and tenant-improvement wiring</li>
             <li>Panel and circuit work</li>
             <li>Code-conscious installation</li>
           </ul>
         </article>
 
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-residential-rough-in.jpg" alt="Residential rough-in wiring and electrical panel" width="500" height="360">
+        <article class="service-detail-card reveal" id="residential">
+          <img class="service-detail-card-image" src="assets/project-residential-rough-in.jpg" srcset="assets/project-residential-rough-in-720.webp 720w, assets/project-residential-rough-in.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="Residential new-build rough-in wiring and electrical panel" width="500" height="360" loading="lazy" decoding="async">
           <span>02</span>
           <h2>Residential Electrical</h2>
-          <p>Electrical work for homes, renovations, additions, upgrades, repairs, and new fixtures.</p>
+          <p>Complete electrical work for residential new builds, renovations, additions, upgrades, repairs, and new fixtures.</p>
           <ul class="service-points">
-            <li>Renovation wiring</li>
+            <li>New-build rough-in and finishing</li>
+            <li>Renovation and addition wiring</li>
             <li>Lighting and outlets</li>
             <li>Service troubleshooting</li>
           </ul>
         </article>
 
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-ev-charger.jpg" alt="Wall-mounted EV charger installation" width="500" height="360">
+        <article class="service-detail-card reveal" id="ev-charging">
+          <img class="service-detail-card-image" src="assets/project-ev-charger.jpg" srcset="assets/project-ev-charger-720.webp 720w, assets/project-ev-charger.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="Wall-mounted EV charger installation" width="500" height="360" loading="lazy" decoding="async">
           <span>03</span>
           <h2>EV Charger Installation</h2>
           <p>Home and commercial EV charger installation with attention to panel capacity, placement, and safe operation.</p>
@@ -85,8 +99,8 @@
           </ul>
         </article>
 
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-solar-roof.jpg" alt="Roof-mounted solar panels and electrical equipment" width="500" height="360">
+        <article class="service-detail-card reveal" id="solar">
+          <img class="service-detail-card-image" src="assets/project-solar-roof.jpg" srcset="assets/project-solar-roof-720.webp 720w, assets/project-solar-roof.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="Roof-mounted solar panels and electrical equipment" width="500" height="360" loading="lazy" decoding="async">
           <span>04</span>
           <h2>Solar Electrical Support</h2>
           <p>Electrical support for solar panel projects, system connections, and related residential or commercial wiring needs.</p>
@@ -97,8 +111,8 @@
           </ul>
         </article>
 
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-security-monitor.jpg" alt="CCTV monitoring display after security system installation" width="500" height="360">
+        <article class="service-detail-card reveal" id="security">
+          <img class="service-detail-card-image" src="assets/project-security-monitor.jpg" srcset="assets/project-security-monitor-720.webp 720w, assets/project-security-monitor.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="CCTV monitoring display after security system installation" width="500" height="360" loading="lazy" decoding="async">
           <span>05</span>
           <h2>CCTV &amp; Security Systems</h2>
           <p>Security system and CCTV installation for homes and businesses that need clear coverage and reliable wiring.</p>
@@ -109,8 +123,8 @@
           </ul>
         </article>
 
-        <article class="service-detail-card reveal">
-          <img class="service-detail-card-image" src="assets/project-control-panel.jpg" alt="Control and automation system wiring panel" width="500" height="360">
+        <article class="service-detail-card reveal" id="automation">
+          <img class="service-detail-card-image" src="assets/project-control-panel.jpg" srcset="assets/project-control-panel-720.webp 720w, assets/project-control-panel.jpg 1170w" sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 920px) 50vw, 33vw" alt="Control and automation system wiring panel" width="500" height="360" loading="lazy" decoding="async">
           <span>06</span>
           <h2>Lutron &amp; Control4 Automation</h2>
           <p>Automation and control work for lighting, security, and connected systems using Lutron and Control4 equipment.</p>
@@ -124,7 +138,70 @@
 
       <div class="service-note reveal">
         <strong>Service area</strong>
-        <p>Vancouver, Squamish, Whistler, and surrounding areas.</p>
+        <p>Based in Squamish and serving the Sea to Sky corridor, including Whistler, Vancouver, and surrounding communities where project scope and scheduling are a fit.</p>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Pricing &amp; estimates</p>
+        <h2>Clear pricing starts with the right project details.</h2>
+        <p>Electrical pricing depends on the scope, existing equipment, materials, access, permitting, and schedule. Share what you want completed and Prowire will review the details for a project-specific estimate.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="pricing-card reveal">
+          <span>01</span>
+          <h3>Describe the work</h3>
+          <p>Tell us whether the project is a new build, renovation, commercial space, EV charger, solar connection, security system, automation project, or service request.</p>
+        </article>
+        <article class="pricing-card reveal">
+          <span>02</span>
+          <h3>Share site details</h3>
+          <p>Include the property location, panel or service information, photos when available, access considerations, and your preferred timing.</p>
+        </article>
+        <article class="pricing-card reveal">
+          <span>03</span>
+          <h3>Receive the next step</h3>
+          <p>Prowire will confirm whether more information or an on-site consultation is needed before providing the appropriate estimate.</p>
+        </article>
+      </div>
+      <div class="pricing-action reveal">
+        <p>Ready to price your project? Use the estimate form to describe the work and select the service you need.</p>
+        <a class="button button-primary" href="contact.html">Request pricing</a>
+      </div>
+    </section>
+
+    <section class="section faq-section" aria-labelledby="service-faq-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Common questions</p>
+        <h2 id="service-faq-title">Electrical service questions.</h2>
+        <p>These answers help homeowners, builders, and businesses prepare for an estimate or consultation.</p>
+      </div>
+      <div class="faq-grid">
+        <article class="faq-item reveal">
+          <h3>Does Prowire take on new builds?</h3>
+          <p>Yes. Prowire supports residential and commercial new builds from electrical planning and rough-in through panels, finishing, specialty systems, and final testing.</p>
+        </article>
+        <article class="faq-item reveal">
+          <h3>How is an electrical project priced?</h3>
+          <p>Pricing is based on scope, materials, existing service capacity, access, permitting requirements, and schedule. Project details help produce a more useful estimate.</p>
+        </article>
+        <article class="faq-item reveal">
+          <h3>Where does Prowire work?</h3>
+          <p>Prowire is based in Squamish and serves the Sea to Sky corridor, including Whistler, Vancouver, and surrounding communities depending on the project.</p>
+        </article>
+        <article class="faq-item reveal">
+          <h3>Can you install a home EV charger?</h3>
+          <p>Yes. The installation process considers charger placement, a dedicated circuit, panel capacity, load requirements, and safe operation.</p>
+        </article>
+        <article class="faq-item reveal">
+          <h3>Do you work on renovations and additions?</h3>
+          <p>Yes. Residential services include renovation and addition wiring, lighting, outlets, panels, upgrades, troubleshooting, and coordination with the wider project.</p>
+        </article>
+        <article class="faq-item reveal">
+          <h3>Can Prowire coordinate with builders and other trades?</h3>
+          <p>Yes. Project planning can account for construction schedules, access, equipment placement, finishing requirements, and coordination with the wider project team.</p>
+        </article>
       </div>
     </section>
 
@@ -145,25 +222,23 @@
     <section class="section cta-section">
       <div class="reveal">
         <p class="eyebrow">Need an electrician?</p>
-        <h2>Need electrical work at your home or business?</h2>
+        <h2>Need pricing for a new build, renovation, or service?</h2>
       </div>
-      <a class="button button-primary reveal" href="contact.html">Contact us</a>
+      <a class="button button-primary reveal" href="contact.html">Request an estimate</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div>
       <strong>Prowire Electric</strong>
-      <p>Residential and commercial electrical services in Vancouver, Squamish, Whistler, and surrounding areas.</p>
+      <p>New-build, residential, commercial, and specialty electrical services across Squamish, Whistler, Vancouver, and the Sea to Sky corridor.</p>
+      <div class="footer-credentials">Licensed, bonded &amp; insured · Technical Safety BC licence TSBC-LIC-00214896</div>
     </div>
     <div class="footer-links">
       <a href="mailto:prowireelectric.ltd@gmail.com">prowireelectric.ltd@gmail.com</a>
       <a href="tel:16048493192">604-849-3192</a>
-      <a href="#">TikTok</a>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
     </div>
-    <small>&copy; 2026 Prowire Electric. All rights reserved.</small>
+    <small class="footer-legal">&copy; 2026 Prowire Electrical Ltd. All rights reserved.</small>
   </footer>
 
   <aside class="chat-widget" aria-label="Chat widget">
@@ -173,8 +248,11 @@
     </button>
     <div class="chat-panel" data-chat-panel hidden>
       <strong>Prowire Electric</strong>
-      <p>For active inquiries, call or email Prowire Electric.</p>
-      <input type="text" aria-label="Chat message" placeholder="Type your message...">
+      <p>For active inquiries or estimate requests, call or email Prowire.</p>
+      <div class="chat-actions">
+        <a href="tel:16048493192">Call 604-849-3192</a>
+        <a href="mailto:prowireelectric.ltd@gmail.com">Email prowireelectric.ltd@gmail.com</a>
+      </div>
     </div>
   </aside>
 </body>
