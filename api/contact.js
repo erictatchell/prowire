@@ -50,12 +50,12 @@ module.exports = async function handler(request, response) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL || "prowireelectric.ltd@gmail.com";
+  const toEmail = process.env.CONTACT_TO_EMAIL || "info@prowiregroup.com";
   const fromEmail = process.env.CONTACT_FROM_EMAIL || "Prowire Website <website@prowireelectric.ca>";
 
   if (!apiKey) {
     return response.status(503).json({
-      error: "Please call 604-849-3192 or email prowireelectric.ltd@gmail.com to request an estimate.",
+      error: "Please call 604-849-3192 or email info@prowiregroup.com to request an estimate.",
     });
   }
 
@@ -101,7 +101,7 @@ module.exports = async function handler(request, response) {
   } catch (error) {
     console.error("Contact email failed", error);
     return response.status(502).json({
-      error: "We could not send the request. Please call 604-849-3192 or email prowireelectric.ltd@gmail.com.",
+      error: "We could not send the request. Please call 604-849-3192 or email info@prowiregroup.com.",
     });
   }
 };

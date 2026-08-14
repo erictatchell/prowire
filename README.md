@@ -41,11 +41,11 @@ The contact forms submit to `/api/contact`, which sends estimate requests throug
 
 ```txt
 RESEND_API_KEY=re_...
-CONTACT_TO_EMAIL=prowireelectric.ltd@gmail.com
+CONTACT_TO_EMAIL=info@prowiregroup.com
 CONTACT_FROM_EMAIL=Prowire Website <website@prowireelectric.ca>
 ```
 
-If the email provider is not configured, the form displays the public phone number and `prowireelectric.ltd@gmail.com` as fallback contact methods.
+If the email provider is not configured, the form displays the public phone number and `info@prowiregroup.com` as fallback contact methods.
 
 ## Search Setup
 
