@@ -68,8 +68,8 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
       });
       const result = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
-        throw new Error(result.error || "We could not send the request.");
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(result.message || result.error || "We could not send the request.");
       }
 
       if (status) {

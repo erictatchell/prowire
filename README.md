@@ -13,7 +13,6 @@ Lightweight static site for Prowire Electric. It uses plain HTML, CSS, and JavaS
 - `app.js` - mobile nav, fade-in reveals, cosmetic form and chat behavior
 - `admin.js` - Google sign-in and admin session UI
 - `api/admin/*` - Vercel serverless admin auth endpoints
-- `api/contact.js` - Vercel contact-form email endpoint
 - `vercel.json` - clean URL and admin route configuration
 - `robots.txt` and `sitemap.xml` - search-engine discovery files for `www.prowireelectric.ca`
 - `assets/logo.png` - Prowire Electric logo used in the header
@@ -37,9 +36,7 @@ Roboto is loaded through Google Fonts in each HTML file with `display=swap`; `st
 
 The home hero/admin background comes from `assets/hero-kitchen.avif`. Supporting project and service photography uses the named `assets/project-*.jpg` files referenced in the HTML and `styles.css`.
 
-The contact form submits to `/api/contact`, which validates estimate requests and forwards them to `info@prowiregroup.com` through FormSubmit. No API key or DNS changes are required. After the first live form submission, open the one-time activation email sent to `info@prowiregroup.com` and confirm the form. FormSubmit retains submissions for 30 days as a delivery fallback.
-
-`CONTACT_TO_EMAIL` can optionally be set in Vercel to change the recipient; it defaults to `info@prowiregroup.com`.
+The contact forms submit directly to FormSubmit's supported AJAX endpoint and deliver estimate requests to `info@prowiregroup.com`. No API key or DNS changes are required. After the first live form submission, open the one-time activation email sent to `info@prowiregroup.com` and confirm the form. FormSubmit retains submissions for 30 days as a delivery fallback.
 
 If delivery fails, the form displays the public phone number and `info@prowiregroup.com` as fallback contact methods.
 
