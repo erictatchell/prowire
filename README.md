@@ -37,15 +37,11 @@ Roboto is loaded through Google Fonts in each HTML file with `display=swap`; `st
 
 The home hero/admin background comes from `assets/hero-kitchen.avif`. Supporting project and service photography uses the named `assets/project-*.jpg` files referenced in the HTML and `styles.css`.
 
-The contact forms submit to `/api/contact`, which sends estimate requests through Resend. Verify `prowireelectric.ca` with Resend and set these Vercel environment variables before enabling production delivery:
+The contact form submits to `/api/contact`, which validates estimate requests and forwards them to `info@prowiregroup.com` through FormSubmit. No API key or DNS changes are required. After the first live form submission, open the one-time activation email sent to `info@prowiregroup.com` and confirm the form. FormSubmit retains submissions for 30 days as a delivery fallback.
 
-```txt
-RESEND_API_KEY=re_...
-CONTACT_TO_EMAIL=info@prowiregroup.com
-CONTACT_FROM_EMAIL=Prowire Website <website@prowireelectric.ca>
-```
+`CONTACT_TO_EMAIL` can optionally be set in Vercel to change the recipient; it defaults to `info@prowiregroup.com`.
 
-If the email provider is not configured, the form displays the public phone number and `info@prowiregroup.com` as fallback contact methods.
+If delivery fails, the form displays the public phone number and `info@prowiregroup.com` as fallback contact methods.
 
 ## Search Setup
 

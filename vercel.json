@@ -50,6 +50,15 @@
           "value": "no-store"
         }
       ]
+    },
+    {
+      "source": "/api/contact-test",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
   ]
 }

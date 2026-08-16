@@ -13,16 +13,7 @@ function clean(value, maxLength) {
   return String(value || "").trim().slice(0, maxLength);
 }
 
-function escapeHtml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-module.exports = async function handler(request, response) {
+async function handleContact(request, response, toEmail) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ error: "Method not allowed." });
@@ -49,52 +40,32 @@ module.exports = async function handler(request, response) {
     return response.status(400).json({ error: "Please enter a valid email address." });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL || "info@prowiregroup.com";
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || "Prowire Website <website@prowireelectric.ca>";
-
-  if (!apiKey) {
-    return response.status(503).json({
-      error: "Please call 604-849-3192 or email info@prowiregroup.com to request an estimate.",
-    });
-  }
-
-  const rows = [
-    ["Name", `${submission.firstName} ${submission.lastName}`.trim()],
-    ["Email", submission.email],
-    ["Phone", submission.phone || "Not provided"],
-    ["Project address", submission.address || "Not provided"],
-    ["Project type", submission.projectType],
-    ["Timeline", submission.timeline || "Not provided"],
-  ];
-
-  const htmlRows = rows
-    .map(
-      ([label, value]) =>
-        `<tr><th align="left" style="padding:6px 14px 6px 0">${escapeHtml(label)}</th><td style="padding:6px 0">${escapeHtml(value)}</td></tr>`
-    )
-    .join("");
-
   try {
-    const emailResponse = await fetch("https://api.resend.com/emails", {
+    const emailResponse = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(toEmail)}`, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        "User-Agent": "Prowire Website/1.0",
+        Accept: "application/json",
+        Origin: "https://www.prowireelectric.ca",
+        Referer: "https://www.prowireelectric.ca/contact",
       },
       body: JSON.stringify({
-        from: fromEmail,
-        to: [toEmail],
-        reply_to: submission.email,
-        subject: `Website estimate request: ${submission.projectType}`,
-        text: `${rows.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\nProject description:\n${submission.message}`,
-        html: `<h1>New website estimate request</h1><table>${htmlRows}</table><h2>Project description</h2><p>${escapeHtml(submission.message).replaceAll("\n", "<br>")}</p>`,
+        _subject: `Website estimate request: ${submission.projectType}`,
+        _replyto: submission.email,
+        _template: "table",
+        Name: `${submission.firstName} ${submission.lastName}`.trim(),
+        Email: submission.email,
+        Phone: submission.phone || "Not provided",
+        "Project address": submission.address || "Not provided",
+        "Project type": submission.projectType,
+        Timeline: submission.timeline || "Not provided",
+        "Project description": submission.message,
       }),
     });
 
     if (!emailResponse.ok) {
-      throw new Error(`Email provider returned ${emailResponse.status}.`);
+      const providerResponse = await emailResponse.json().catch(() => ({}));
+      throw new Error(providerResponse.message || `Email provider returned ${emailResponse.status}.`);
     }
 
     return response.status(200).json({ ok: true });
@@ -104,4 +75,11 @@ module.exports = async function handler(request, response) {
       error: "We could not send the request. Please call 604-849-3192 or email info@prowiregroup.com.",
     });
   }
+}
+
+module.exports = function handler(request, response) {
+  const toEmail = process.env.CONTACT_TO_EMAIL || "info@prowiregroup.com";
+  return handleContact(request, response, toEmail);
 };
+
+module.exports.handleContact = handleContact;
