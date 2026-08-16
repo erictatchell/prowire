@@ -50,6 +50,7 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
     const status = form.querySelector("[data-form-status]");
     const submitButton = form.querySelector('button[type="submit"]');
     const payload = Object.fromEntries(new FormData(form).entries());
+    const endpoint = form.dataset.formEndpoint;
 
     if (status) {
       status.dataset.tone = "pending";
@@ -61,7 +62,11 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
     }
 
     try {
-      const response = await fetch(form.action, {
+      if (!endpoint) {
+        throw new Error("Contact form endpoint is missing.");
+      }
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -69,7 +74,7 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok || result.success === false || result.success === "false") {
-        throw new Error(result.message || result.error || "We could not send the request.");
+        throw new Error("Contact form delivery failed.");
       }
 
       if (status) {
@@ -78,9 +83,10 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
       }
       form.reset();
     } catch (error) {
+      console.error("Contact form delivery failed", error);
       if (status) {
         status.dataset.tone = "error";
-        status.textContent = error.message;
+        status.textContent = "We couldn't send your request. Please call 604-849-3192 or email info@prowiregroup.com.";
       }
     } finally {
       if (submitButton) {
